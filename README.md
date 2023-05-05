@@ -2,7 +2,7 @@
 creating swinlane diagram using react under development
 To run:
 
-cd swimlane
+cd swimlane/frontend
 
 npm install
 
