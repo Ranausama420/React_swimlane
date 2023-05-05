@@ -1,0 +1,28 @@
+.Flow {
+  flex-grow: 1;
+  /*font-size: 12px;*/
+  height: 600px;
+  /*width: 550px;*/
+}
+
+.react-flow__node-custom {
+  border: 1px solid #555;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+}
+.trapezium {
+  height: 0;
+  width: 50px;
+  border-bottom: 50px solid #FFE7B5;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+}
+.oval {
+  height: 50px;
+  width: 100px;
+  background-color: #B7E9DC;
+  border-radius: 50%;
+  font-size: 10px;
+}
