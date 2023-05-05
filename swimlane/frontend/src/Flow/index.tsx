@@ -43,43 +43,53 @@ function Flow(props: Flowprop) {
 
 
   const defaultEdgeOptions = {
-    style: { strokeWidth: 3, stroke: 'black' },
+    style: { strokeWidth: 1, stroke: 'black' },
     markerEnd: {
       type: MarkerType.Arrow,
       color: 'black',
     },
   };
   const connectionLineStyle = {
-    strokeWidth: 3,
+    strokeWidth: 1,
     stroke: 'black',
+    zindex: 100,
   };
   const array = props.data.split('-');
   // for(){}
   const initialNodes: Node[] = [
     {
       id: 'x',
-      data: { label: 'Group A',colorname:'#2B98E3'},
+      data: { label: 'Group A'},
       position: { x: 0, y: 0 },
       className: 'light',
-      style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 680, height: 100,border: '1px solid grey',},
+      style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 1000, height: 100,border: '1px solid grey',},
       type: 'sum',
       draggable:false,
     },
     {
       id: 'x1',
-      data: { label: 'Group B',colorname:'#EDB000'},
+      data: { label: 'Group B'},
       position: { x: 0, y: 100 },
       className: 'light',
-      style: { backgroundColor: 'rgba(255, 0.3, 0, 0.1)', width: 680, height: 100,border: '1px solid grey' },
+      style: { backgroundColor: '#FBF9D6', width: 1000, height: 100,border: '1px solid grey' },
       type: 'sum',
       draggable:false,
     },
     {
       id: 'x3',
-      data: { label: 'Group c',colorname:'#15CABD'},
+      data: { label: 'Group c'},
       position: { x: 0, y: 200 },
       className: 'light',
-      style: { backgroundColor: 'rgba(190, 0.9, 0.6, 0.4)', width: 680, height: 100,border: '1px solid grey' },
+      style: { backgroundColor: '#D6EBFB', width: 1000, height: 300,border: '1px solid grey' },
+      type: 'sum',
+      draggable:false,
+    },
+    {
+      id: 'x4',
+      data: { label: 'Group e'},
+      position: { x: 0, y: 500 },
+      className: 'light',
+      style: { backgroundColor: '#E0E2FD', width: 1000, height: 100,border: '1px solid grey' },
       type: 'sum',
       draggable:false,
     },
@@ -95,7 +105,7 @@ function Flow(props: Flowprop) {
       id: '3a',
       data: { label: 'Node A.2' },
       position: {x: 50, y: 5 },
-      type:'decisionTree',
+      type:'parent',
       parentNode: 'x',
       expandParent:true,
       extent:'parent',
@@ -114,7 +124,7 @@ function Flow(props: Flowprop) {
       data: { label: 'Node A.4' },
       position: {x: 450, y: 5 },
       type:'parent',
-      parentNode: 'x',
+      parentNode: 'x4',
       expandParent:true,
       extent:'parent',
     },
@@ -147,10 +157,10 @@ function Flow(props: Flowprop) {
   ];
 
   const initialEdges: Edge[] = [
-    { id: 'e1', source: '2a', target: '2b', animated: true },
-    { id: 'e2', source: '2a', target: '3b', animated: true },
-    { id: 'e3', source: '2a', target: '1c'},
-    { id: 'e4', source: '3b', target: '1c'},
+    { id: 'e1', source: '2a', target: '2b', animated: true,zIndex: 10 },
+    { id: 'e2', source: '2a', target: '3b', animated: true,zIndex: 10 },
+    { id: 'e3', source: '2a', target: '1c',zIndex: 10},
+    { id: 'e4', source: '3b', target: '1c' ,zIndex: 10},
   ];
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -167,7 +177,7 @@ function Flow(props: Flowprop) {
       id: getNodeId(),
       data: { label: 'Added node' },
       position: {
-        x:-80,
+        x:0,
         y:0,
       },
       type:'parent',

@@ -22,8 +22,8 @@ const CustomNode2: FC<NodeProps> = ({ data,xPos, yPos ,isConnectable }) => {
             {/*    <p >{data.tst}</p>*/}
             {/*        */}
             {/*</div>*/}
-            <Box sx={{borderRadius:0.5,borderColor:'#4B4B4B',height:98, width:35,textAlign:'center',transform:'rotate(180deg)',writingMode:"vertical-lr", bgcolor:color}}>
-               <span style={{marginLeft:-15}}>{data.label}</span>
+            <Box sx={{height:'100%', width:35,textAlign:'center',transform:'rotate(180deg)',writingMode:"vertical-lr", border:'0.2px solid grey'}}>
+               <span style={{marginLeft:-35}}>{data.label}</span>
             </Box>
 
         </>

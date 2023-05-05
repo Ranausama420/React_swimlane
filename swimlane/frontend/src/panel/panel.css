@@ -1,6 +1,6 @@
-.log {
+.panel {
   /*height: 550px;*/
-  width: 450px;
-  color: black;
+  /* width: 450px; */
+  border: solid;
 }
 
