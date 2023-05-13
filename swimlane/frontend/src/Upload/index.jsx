@@ -47,7 +47,7 @@ function Upload() {
                 <FlowWithProvider data={state.data}/>
             </Box>
             <Box>
-                <Grid><Box sx={{ bgcolor: '#D9D9D9', border: 1,borderColor: 'secondary',minHeight:0.4 ,margin:0.5}} >
+                {/* <Grid><Box sx={{ bgcolor: '#D9D9D9', border: 1,borderColor: 'secondary',minHeight:0.4 ,margin:0.5}} >
                     <div style={{textAlign:'center'}}>Timeline<span>&#8594;</span></div>
                 </Box></Grid>
                 <Grid container  >
@@ -117,7 +117,7 @@ function Upload() {
                             </Box>
                         </Box>
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid>
                     <Box sx={{ bgcolor: '#D9D9D9', border: 1,borderColor: 'secondary',minHeight:0.4 ,margin:0.5}} >
                     <div className="upload">
